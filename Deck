@@ -1,0 +1,6 @@
+suit = [ "heart", "spade", "club", "dimond"]
+rank = [ "A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"]
+
+card = [suit[rand(0..3)], rank[rand(0..12)] ]
+
+puts card
