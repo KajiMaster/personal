@@ -67,8 +67,9 @@ class Player
       @name = name
       @level = 1
       @hp = 20
-      @hand = hand
+      
       @deck_cards = deck_cards
+      @hand = @deck_cards.
       @num_delt = num_delt
    end
       
@@ -99,6 +100,9 @@ end
 ########################################################################
 #### 			END PLAYER.RB CODE ADDED AND MODIFEID FROM RUBYQUEST #####
 #########################################################################
+
+## // I should probably make this into a game object? // ###
+
 d1 = Deck.new.shuffle!
 puts card = d1.draw
 
