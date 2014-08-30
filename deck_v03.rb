@@ -50,7 +50,7 @@ class Deck
 		self
 	end
 
-	def draw(*num)
+	def pick_card(*num)
 		@deck.pop(*num)
 	end
 end
@@ -69,7 +69,7 @@ class Player
       @hp = 20
       
       @deck_cards = deck_cards
-      @hand = @deck_cards.
+      @hand = @deck_cards.hand
       @num_delt = num_delt
    end
       
@@ -91,7 +91,7 @@ class Player
       return @hp
    end  
    def hand(*num_delt)
-      @deck_cards.draw(*num_delt)
+      @deck_cards.pick_card(*num_delt)
    end     
    def getHp()
       return @hp
@@ -102,13 +102,20 @@ end
 #########################################################################
 
 ## // I should probably make this into a game object? // ###
+class Game
 
-d1 = Deck.new.shuffle!
-puts card = d1.draw
+   def initiate
+      @d1 = Deck.new.shuffle!
+      puts @card = d1.pick_card
+      @player1 = Player.new("Blake", d1, 7)
+      @player2 = Player.new("Tiffany", d1, 7)
+   end
 
-player1 = Player.new("Blake", d1, 7)
-player2 = Player.new("Tiffany", d1, 7)
-
-hand01 = player1.hand(7)
+hand01 = @player1.hand(7)
 
 puts hand01.sort.join(", ")
+end
+
+
+new_game = Game.new
+new_game
